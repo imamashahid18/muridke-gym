@@ -1,0 +1,1786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Muridke Gym | Health & Strength</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --black: #050505;
+            --dark: #0d0d0d;
+            --card: #151515;
+            --green: #20e060;
+            --green-dark: #0d8f3d;
+            --white: #ffffff;
+            --gray: #a9a9a9;
+        }
+
+        body {
+            background: var(--black);
+            color: var(--white);
+            font-family: "Inter", sans-serif;
+            overflow-x: hidden;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        section {
+            padding: 65px 0;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+
+            background: rgba(5,5,5,0.94);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(32,224,96,0.2);
+        }
+
+        .navbar {
+            height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .logo-text {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 25px;
+            letter-spacing: 1px;
+        }
+
+        .logo-text span {
+            color: var(--green);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        nav a {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--green);
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 29px;
+            color: var(--green);
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,0.96),
+                    rgba(0,0,0,0.55)
+                ),
+                url("https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1800&q=85")
+                center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 720px;
+            padding-top: 65px;
+        }
+
+        .hero-small {
+            color: var(--green);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: clamp(70px, 12vw, 130px);
+            line-height: 0.85;
+            letter-spacing: 3px;
+        }
+
+        .hero h1 span {
+            color: var(--green);
+        }
+
+        .tagline {
+            font-size: clamp(19px, 3vw, 30px);
+            font-weight: 800;
+            margin: 20px 0 12px;
+        }
+
+        .hero p {
+            color: #d0d0d0;
+            line-height: 1.7;
+            max-width: 650px;
+        }
+
+        .expert-mini {
+            margin-top: 25px;
+            padding-left: 15px;
+            border-left: 3px solid var(--green);
+        }
+
+        .expert-mini strong {
+            display: block;
+            font-size: 19px;
+        }
+
+        .expert-mini span {
+            color: var(--green);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 18px;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(32,224,96,0.35);
+            padding: 9px 12px;
+            font-size: 11px;
+            font-weight: 700;
+            border-radius: 3px;
+        }
+
+
+        /* =========================
+           SECTION TITLE
+        ========================= */
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title span {
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section-title h2 {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 55px;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 650px;
+            margin: 10px auto 0;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: var(--dark);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-image img {
+            height: 430px;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 1px solid rgba(32,224,96,0.35);
+        }
+
+        .about-text h2 {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 55px;
+            margin-bottom: 12px;
+        }
+
+        .about-text h2 span {
+            color: var(--green);
+        }
+
+        .about-text p {
+            color: var(--gray);
+            line-height: 1.7;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .about-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .about-list div {
+            background: var(--card);
+            padding: 12px;
+            border-left: 2px solid var(--green);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           PROGRAMS
+        ========================= */
+
+        .programs {
+            background: var(--black);
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .program-card {
+            background: var(--card);
+            border: 1px solid #222;
+            overflow: hidden;
+            transition: 0.35s;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--green);
+        }
+
+        .program-card img {
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .program-content {
+            padding: 18px;
+        }
+
+        .program-icon {
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
+
+        .program-content h3 {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 27px;
+        }
+
+        .program-content p {
+            color: var(--gray);
+            font-size: 12px;
+            line-height: 1.6;
+            margin-top: 5px;
+        }
+
+
+        /* =========================
+           EXPERT
+        ========================= */
+
+        .expert {
+            background: var(--dark);
+        }
+
+        .expert-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .expert-photo img {
+            height: 480px;
+            object-fit: cover;
+            border: 1px solid var(--green);
+        }
+
+        .expert-content small {
+            color: var(--green);
+            font-weight: 800;
+            letter-spacing: 3px;
+        }
+
+        .expert-content h2 {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 65px;
+            line-height: 0.9;
+            margin: 10px 0;
+        }
+
+        .expert-content h2 span {
+            color: var(--green);
+        }
+
+        .expert-title {
+            font-weight: 700;
+            line-height: 1.7;
+        }
+
+        .expert-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0;
+        }
+
+        .expert-badge {
+            border: 1px solid var(--green);
+            color: var(--green);
+            padding: 8px 11px;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .expert-message {
+            color: var(--gray);
+            font-size: 13px;
+            line-height: 1.7;
+            border-left: 3px solid var(--green);
+            padding-left: 15px;
+        }
+
+
+        /* =========================
+           GALLERY
+        ========================= */
+
+        .gallery {
+            background: var(--black);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .gallery-item {
+            height: 230px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+
+        /* =========================
+           TIMINGS
+        ========================= */
+
+        .timings {
+            background: var(--dark);
+        }
+
+        .timing-box {
+            max-width: 750px;
+            margin: auto;
+            background: var(--card);
+            border: 1px solid #222;
+        }
+
+        .day {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 15px 20px;
+            border-bottom: 1px solid #242424;
+            font-size: 13px;
+        }
+
+        .day:last-child {
+            border-bottom: none;
+        }
+
+        .day-name {
+            font-weight: 800;
+        }
+
+        .day-time {
+            color: var(--green);
+            text-align: right;
+            font-weight: 700;
+        }
+
+        .closed {
+            color: #ff4b4b;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: var(--black);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .contact-card {
+            background: var(--card);
+            padding: 28px;
+            border: 1px solid #222;
+        }
+
+        .contact-card h3 {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 35px;
+            margin-bottom: 18px;
+        }
+
+        .contact-card h3 span {
+            color: var(--green);
+        }
+
+        .contact-row {
+            margin-bottom: 15px;
+        }
+
+        .contact-row small {
+            display: block;
+            color: var(--green);
+            font-weight: 800;
+            margin-bottom: 3px;
+        }
+
+        .contact-row p {
+            color: #ddd;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .socials {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .social {
+            border: 1px solid var(--green);
+            color: var(--green);
+            padding: 9px 15px;
+            font-size: 12px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .social:hover {
+            background: var(--green);
+            color: #000;
+        }
+
+        .map {
+            min-height: 350px;
+            border: 1px solid var(--green);
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 350px;
+            border: 0;
+            filter: grayscale(100%);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #020202;
+            border-top: 1px solid rgba(32,224,96,0.2);
+            padding: 30px 0 18px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-brand {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 28px;
+        }
+
+        .footer-brand span {
+            color: var(--green);
+        }
+
+        .footer-content p {
+            color: #777;
+            font-size: 11px;
+        }
+
+        .copyright {
+            text-align: center;
+            color: #555;
+            font-size: 10px;
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid #151515;
+        }
+
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            nav ul {
+                position: absolute;
+                top: 72px;
+                left: 0;
+                width: 100%;
+
+                display: none;
+                flex-direction: column;
+
+                gap: 0;
+                background: #050505;
+
+                border-bottom: 1px solid var(--green);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav li {
+                padding: 15px 5%;
+                border-bottom: 1px solid #181818;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .about-grid,
+            .expert-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image img {
+                height: 350px;
+            }
+
+            .expert-photo img {
+                height: 400px;
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 48px 0;
+            }
+
+            .container {
+                width: 90%;
+            }
+
+            .navbar {
+                height: 65px;
+            }
+
+            .logo img {
+                width: 42px;
+                height: 42px;
+            }
+
+            .logo-text {
+                font-size: 22px;
+            }
+
+            nav ul {
+                top: 65px;
+            }
+
+            .hero {
+                min-height: 720px;
+            }
+
+            .hero-content {
+                padding-top: 50px;
+            }
+
+            .hero h1 {
+                font-size: 75px;
+            }
+
+            .hero p {
+                font-size: 13px;
+            }
+
+            .tagline {
+                font-size: 21px;
+            }
+
+            .badge {
+                font-size: 10px;
+                padding: 8px 10px;
+            }
+
+            .section-title {
+                margin-bottom: 25px;
+            }
+
+            .section-title h2 {
+                font-size: 45px;
+            }
+
+            .section-title p {
+                font-size: 12px;
+            }
+
+            .about-image img {
+                height: 260px;
+            }
+
+            .about-text h2 {
+                font-size: 45px;
+            }
+
+            .about-text p {
+                font-size: 12px;
+            }
+
+            .about-list {
+                gap: 6px;
+            }
+
+            .about-list div {
+                padding: 10px;
+                font-size: 10px;
+            }
+
+            .program-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .program-card img {
+                height: 200px;
+            }
+
+            .program-content {
+                padding: 15px;
+            }
+
+            .expert-photo img {
+                height: 330px;
+            }
+
+            .expert-content h2 {
+                font-size: 52px;
+            }
+
+            .expert-message {
+                font-size: 11px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 6px;
+            }
+
+            .gallery-item {
+                height: 160px;
+            }
+
+            .timing-box {
+                width: 100%;
+            }
+
+            .day {
+                padding: 13px 12px;
+                font-size: 11px;
+            }
+
+            .contact-card {
+                padding: 20px;
+            }
+
+            .contact-card h3 {
+                font-size: 32px;
+            }
+
+            .map,
+            .map iframe {
+                min-height: 280px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header>
+
+    <div class="container navbar">
+
+        <a href="#home" class="logo">
+
+            <!-- Agar logo ka naam different hai to sirf muridkegym.jpg change karna -->
+            <img src="muridkegym.jpg" alt="Muridke Gym Logo">
+
+            <div class="logo-text">
+                MURIDKE <span>GYM</span>
+            </div>
+
+        </a>
+
+
+        <nav>
+
+            <ul id="navMenu">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#programs">Programs</a>
+                </li>
+
+                <li>
+                    <a href="#gallery">Gallery</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <div class="menu-btn" id="menuBtn">
+            ☰
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     HOME
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-content reveal">
+
+            <div class="hero-small">
+                Health & Strength
+            </div>
+
+            <h1>
+                MURIDKE
+                <br>
+                <span>GYM</span>
+            </h1>
+
+            <div class="tagline">
+                Train Hard. Get Strong.
+            </div>
+
+            <p>
+                Professional fitness and strength training
+                in Muridke, Pakistan.
+            </p>
+
+
+            <div class="expert-mini">
+
+                <strong>
+                    M. Shoaib Subhani
+                </strong>
+
+                <span>
+                    Sports Physician & Fat Loss Expert
+                </span>
+
+            </div>
+
+
+            <div class="badges">
+
+                <div class="badge">
+                    🏆 Mr Pakistan Junior
+                </div>
+
+                <div class="badge">
+                    🏆 Mr Sheikhupura
+                </div>
+
+                <div class="badge">
+                    🧠 Sports Physician
+                </div>
+
+                <div class="badge">
+                    💪 Certified Coach
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about" id="about">
+
+    <div class="container about-grid">
+
+
+        <div class="about-image reveal">
+
+            <img
+                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1100&q=85"
+                alt="Muridke Gym"
+            >
+
+        </div>
+
+
+        <div class="about-text reveal">
+
+            <div class="section-title" style="text-align:left; margin-bottom:15px;">
+
+                <span>
+                    About Us
+                </span>
+
+                <h2>
+                    MURIDKE <span>GYM</span>
+                </h2>
+
+            </div>
+
+
+            <p>
+                A dedicated fitness center focused on
+                strength, physique, health and performance.
+            </p>
+
+            <p>
+                Professional guidance for training,
+                nutrition, conditioning and lifestyle.
+            </p>
+
+
+            <div class="about-list">
+
+                <div>💪 Fitness</div>
+
+                <div>🥗 Nutrition</div>
+
+                <div>🏋️ Strength</div>
+
+                <div>🏆 Sports</div>
+
+                <div>💪 Muscle Gain</div>
+
+                <div>🧠 Lifestyle</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PROGRAMS
+========================= -->
+
+<section class="programs" id="programs">
+
+    <div class="container">
+
+
+        <div class="section-title reveal">
+
+            <span>
+                What We Do
+            </span>
+
+            <h2>
+                Fitness <span>Programs</span>
+            </h2>
+
+        </div>
+
+
+        <div class="program-grid">
+
+
+            <!-- STRENGTH -->
+
+            <div class="program-card reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=900&q=85"
+                    alt="Strength Training"
+                >
+
+                <div class="program-content">
+
+                    <div class="program-icon">
+                        💪
+                    </div>
+
+                    <h3>
+                        Strength Training
+                    </h3>
+
+                    <p>
+                        Build strength, power and endurance.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MUSCLE GAIN -->
+
+            <div class="program-card reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85"
+                    alt="Muscle Gain"
+                >
+
+                <div class="program-content">
+
+                    <div class="program-icon">
+                        🏋️
+                    </div>
+
+                    <h3>
+                        Muscle Gain
+                    </h3>
+
+                    <p>
+                        Build muscle and improve physique.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CONDITIONING -->
+
+            <div class="program-card reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=900&q=85"
+                    alt="Fitness Conditioning"
+                >
+
+                <div class="program-content">
+
+                    <div class="program-icon">
+                        🏃
+                    </div>
+
+                    <h3>
+                        Fitness & Conditioning
+                    </h3>
+
+                    <p>
+                        Improve stamina, mobility and fitness.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NUTRITION -->
+
+            <div class="program-card reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=85"
+                    alt="Nutrition"
+                >
+
+                <div class="program-content">
+
+                    <div class="program-icon">
+                        🥗
+                    </div>
+
+                    <h3>
+                        Nutrition Guidance
+                    </h3>
+
+                    <p>
+                        Practical nutrition for fitness goals.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SPORTS -->
+
+            <div class="program-card reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=900&q=85"
+                    alt="Sports Training"
+                >
+
+                <div class="program-content">
+
+                    <div class="program-icon">
+                        🧠
+                    </div>
+
+                    <h3>
+                        Sports & Lifestyle
+                    </h3>
+
+                    <p>
+                        Performance, recovery and conditioning.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PERSONAL TRAINING -->
+
+            <div class="program-card reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=900&q=85"
+                    alt="Personal Training"
+                >
+
+                <div class="program-content">
+
+                    <div class="program-icon">
+                        🏆
+                    </div>
+
+                    <h3>
+                        Personal Training
+                    </h3>
+
+                    <p>
+                        Focused training with expert guidance.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     EXPERT
+========================= -->
+
+<section class="expert">
+
+    <div class="container expert-grid">
+
+
+        <div class="expert-photo reveal">
+
+            <img
+                src="muridkegym1.jpg"
+                alt="Fitness Trainer"
+            >
+
+        </div>
+
+
+        <div class="expert-content reveal">
+
+            <small>
+                FITNESS EXPERT
+            </small>
+
+            <h2>
+                M. SHOAI<span>B SUBHANI</span>
+            </h2>
+
+            <div class="expert-title">
+                Sports Physician & Fat Loss Expert
+                <br>
+                Fitness Trainer
+            </div>
+
+
+            <div class="expert-badges">
+
+                <div class="expert-badge">
+                    🏆 Mr Pakistan Junior
+                </div>
+
+                <div class="expert-badge">
+                    🏆 Mr Sheikhupura
+                </div>
+
+                <div class="expert-badge">
+                    🧠 Sports Physician
+                </div>
+
+                <div class="expert-badge">
+                    💪 Certified Coach
+                </div>
+
+            </div>
+
+
+            <p class="expert-message">
+
+                One stop place for health and fitness guidance
+                covering nutrition, supplementation, strength,
+                conditioning, sports and lifestyle.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<section class="gallery" id="gallery">
+
+    <div class="container">
+
+
+        <div class="section-title reveal">
+
+            <span>
+                Our Gym
+            </span>
+
+            <h2>
+                Training <span>Gallery</span>
+            </h2>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+
+            <div class="gallery-item reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=85"
+                    alt="Gym Interior"
+                >
+
+            </div>
+
+
+            <div class="gallery-item reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=85"
+                    alt="Strength Training"
+                >
+
+            </div>
+
+
+            <div class="gallery-item reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=85"
+                    alt="Fitness Training"
+                >
+
+            </div>
+
+
+            <div class="gallery-item reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=800&q=85"
+                    alt="Cardio"
+                >
+
+            </div>
+
+
+            <div class="gallery-item reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=85"
+                    alt="Workout"
+                >
+
+            </div>
+
+
+            <div class="gallery-item reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1576678927484-cc907957088c?auto=format&fit=crop&w=800&q=85"
+                    alt="Gym Equipment"
+                >
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     TIMINGS
+========================= -->
+
+<section class="timings">
+
+    <div class="container">
+
+
+        <div class="section-title reveal">
+
+            <span>
+                Visit Us
+            </span>
+
+            <h2>
+                Opening <span>Hours</span>
+            </h2>
+
+        </div>
+
+
+        <div class="timing-box reveal">
+
+
+            <div class="day">
+
+                <div class="day-name">
+                    Monday
+                </div>
+
+                <div class="day-time">
+                    6:00 AM – 10:30 AM
+                    <br>
+                    3:30 PM – 11:29 PM
+                </div>
+
+            </div>
+
+
+            <div class="day">
+
+                <div class="day-name">
+                    Tuesday
+                </div>
+
+                <div class="day-time">
+                    6:00 AM – 10:30 AM
+                    <br>
+                    3:30 PM – 11:29 PM
+                </div>
+
+            </div>
+
+
+            <div class="day">
+
+                <div class="day-name">
+                    Wednesday
+                </div>
+
+                <div class="day-time">
+                    6:00 AM – 10:30 AM
+                    <br>
+                    3:30 PM – 11:29 PM
+                </div>
+
+            </div>
+
+
+            <div class="day">
+
+                <div class="day-name">
+                    Thursday
+                </div>
+
+                <div class="day-time">
+                    6:00 AM – 10:30 AM
+                    <br>
+                    3:30 PM – 11:29 PM
+                </div>
+
+            </div>
+
+
+            <div class="day">
+
+                <div class="day-name">
+                    Friday
+                </div>
+
+                <div class="day-time closed">
+                    CLOSED
+                </div>
+
+            </div>
+
+
+            <div class="day">
+
+                <div class="day-name">
+                    Saturday
+                </div>
+
+                <div class="day-time">
+                    6:00 AM – 10:30 AM
+                    <br>
+                    3:30 PM – 11:29 PM
+                </div>
+
+            </div>
+
+
+            <div class="day">
+
+                <div class="day-name">
+                    Sunday
+                </div>
+
+                <div class="day-time">
+                    6:00 AM – 10:30 AM
+                    <br>
+                    3:30 PM – 11:29 PM
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+
+        <div class="section-title reveal">
+
+            <span>
+                Find Us
+            </span>
+
+            <h2>
+                Contact <span>Muridke Gym</span>
+            </h2>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+            <div class="contact-card reveal">
+
+                <h3>
+                    Get In <span>Touch</span>
+                </h3>
+
+
+                <div class="contact-row">
+
+                    <small>
+                        📍 LOCATION
+                    </small>
+
+                    <p>
+                        GT Road Muridke,
+                        Near Mujahid Hotel,
+                        Muridke, Pakistan
+                    </p>
+
+                </div>
+
+
+                <div class="contact-row">
+
+                    <small>
+                        📞 PHONE
+                    </small>
+
+                    <p>
+                        03234680480
+                    </p>
+
+                </div>
+
+
+                <div class="contact-row">
+
+                    <small>
+                        💪 FITNESS TRAINER
+                    </small>
+
+                    <p>
+                        M. Shoaib Subhani
+                    </p>
+
+                </div>
+
+
+                <div class="socials">
+
+                    <a
+                        class="social"
+                        href="https://www.instagram.com/shoaib_fitnes/"
+                        target="_blank">
+
+                        Instagram
+
+                    </a>
+
+
+                    <a
+                        class="social"
+                        href="https://www.youtube.com/@shoaibfitness839"
+                        target="_blank">
+
+                        YouTube
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="map reveal">
+
+                <iframe
+                    src="https://www.google.com/maps?q=Muridke%20GT%20Road%20Near%20Mujahid%20Hotel%20Pakistan&output=embed"
+                    loading="lazy">
+                </iframe>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container">
+
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                MURIDKE <span>GYM</span>
+
+            </div>
+
+
+            <p>
+                Train Hard. Get Strong.
+            </p>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Muridke Gym. All Rights Reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    const menuBtn =
+        document.getElementById("menuBtn");
+
+    const navMenu =
+        document.getElementById("navMenu");
+
+
+    menuBtn.addEventListener("click", function () {
+
+        navMenu.classList.toggle("active");
+
+    });
+
+
+    document.querySelectorAll("nav a").forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+            navMenu.classList.remove("active");
+
+        });
+
+    });
+
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+
+    function revealOnScroll() {
+
+        const windowHeight =
+            window.innerHeight;
+
+
+        revealElements.forEach(function(element) {
+
+            const elementTop =
+                element.getBoundingClientRect().top;
+
+
+            if (elementTop < windowHeight - 60) {
+
+                element.classList.add("active");
+
+            }
+
+        });
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        revealOnScroll
+    );
+
+
+    revealOnScroll();
+
+</script>
+
+
+</body>
+</html>
